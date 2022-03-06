@@ -2,18 +2,25 @@
 
 dc-DeepMSI provides a deep learning-based method to identify underlying metabolic heterogeneity from high-dimensional mass spectrometry imaging data. Developer is Lei Guo from Laboratory of Biomedical Network, Department of Electronic Science, Xiamen University of China.
 
-## Requirement
+# Overview of dc-DeepMSI
 
-python == 3.5, 3.6 or 3.7
+<div align=center>
+<img src="https://user-images.githubusercontent.com/70273368/156913023-9654e8b0-1cb7-494f-8715-02d8d172daca.png" width="600" height="500" /><br/>
+</div>
+Architecture of dc-DeepMSI model. The upper half part is dimensionality reduction module which reduces a high-dimensional MSI data to a low-dimensional feature map. The dimension reduction module is implemented by an autoencoder which consists of two fully connection layers in both encoder and decoder blocks. The lower half part is feature clustering module which is consisted of two CNN networks and two ensemble CNN networks. Each CNN network consists of a feature extraction (FE) block and an argmax classification. The cluster label from one ensemble CNN network is feed into its counterpart CNN network by loss function to stabilize the segmentation result. When dc-DeepMSI reaches convergence, the four CNN networks will also converge to a similar cluster label.
 
-pytorch == 1.8.2
+# Quick start
 
-numpy >= 1.8.0
+## Input
+ * A common data format .imzML for mass spectrometry imaging data. Detailed of imzML format can be found in https://ms-imaging.org/imzml/
 
-cv2 == 4.5.3
+ * Taking msi data of fetuse mouse as an example, you can download it by following scripts：
+ 
+```
+https://
+```
 
-umap == 0.5.1
+## Run
 
-scikit-learn == 0.19.1
+### Step 1 Preprocessing raw data
 
-## Quick start
