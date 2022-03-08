@@ -12,7 +12,7 @@ Architecture of dc-DeepMSI model. The upper half part is dimensionality reductio
 # Quick start
 
 ## Input
- * A common data format .imzML for mass spectrometry imaging data. Detailed of imzML format can be found in https://ms-imaging.org/imzml/
+ * The raw MSI data is collected using Bruker RapifleX MALDI Tissuetyper. SCiLS Lab vendor software is used to read and export MSI data to .imzML files. Detailed of imzML format can be found in https://ms-imaging.org/imzml/
 
  * Taking msi data of fetuse mouse as an example, you can download it by following scripts：
  
@@ -23,4 +23,8 @@ https://
 ## Run
 
 ### Step 1 Preprocessing raw data
+
+Here, MSI data preprocessing including spectral alignment, peak detection, peak binning, peak filtering and peak pooling. Among them, spectral alignment, peak detection, peak binning are achieved using R package "MALDIquant", peak filtering and peak pooling are carried out by in-house Python scripts.
+
+### Step 2 Run dc-DeepMSI model
 
