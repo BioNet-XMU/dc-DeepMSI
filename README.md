@@ -17,7 +17,7 @@ Architecture of dc-DeepMSI model. The upper half part is dimensionality reductio
  * Taking msi data of fetuse mouse as an example, you can download it by following scripts：
  
 ```
-https://
+https://drive.google.com/drive/folders/1ksIHUE8r8ADS90pOErroW8_XEF-sOOdP?usp=sharing
 ```
 
 ## Run
