@@ -11,7 +11,7 @@ Architecture of dc-DeepMSI model. The upper half part is dimensionality reductio
 
 # Quick start
 
-## Input
+## Dataset
  * The raw MSI data is collected using Bruker RapifleX MALDI Tissuetyper. SCiLS Lab vendor software is used to read and export MSI data to .imzML files. Detailed of imzML format can be found in https://ms-imaging.org/imzml/
 
  * Taking msi data of fetuse mouse as an example, you can download it by following scripts：
