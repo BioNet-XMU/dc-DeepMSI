@@ -9,6 +9,20 @@ dc-DeepMSI provides a deep learning-based method to identify underlying metaboli
 </div>
 Architecture of dc-DeepMSI model. The upper half part is dimensionality reduction module which reduces a high-dimensional MSI data to a low-dimensional feature map. The dimension reduction module is implemented by an autoencoder which consists of two fully connection layers in both encoder and decoder blocks. The lower half part is feature clustering module which is consisted of two CNN networks and two ensemble CNN networks. Each CNN network consists of a feature extraction (FE) block and an argmax classification. The cluster label from one ensemble CNN network is feed into its counterpart CNN network by loss function to stabilize the segmentation result. When dc-DeepMSI reaches convergence, the four CNN networks will also converge to a similar cluster label.
 
+# Requirement
+
+    python == 3.5, 3.6 or 3.7
+    
+    pytorch == 1.8.2
+    
+    opencv == 4.5.3
+    
+    matplotlib == 2.2.2
+
+    numpy >= 1.8.0
+    
+    umap == 0.5.1
+    
 # Quick start
 
 ## Input
