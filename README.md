@@ -11,20 +11,28 @@ Architecture of dc-DeepMSI model. The upper half part is dimensionality reductio
 
 # Quick start
 
-## Dataset
- * The raw MSI data is collected using Bruker RapifleX MALDI Tissuetyper. SCiLS Lab vendor software is used to read and export MSI data to .imzML files. Detailed of imzML format can be found in https://ms-imaging.org/imzml/
+## Input
 
- * Taking msi data of fetuse mouse as an example, you can download it by following scripts：
+ * The input is the preprocessed MSI data with two-dimensional shape [X*Y,P], where X and Y represent the pixel numbers of horizontal and vertical coordinates of MSI data, and P represents the number of ions. Taking msi data of fetuse mouse as an example, you can download it by following scripts：
  
 ```
 https://drive.google.com/drive/folders/1ksIHUE8r8ADS90pOErroW8_XEF-sOOdP?usp=sharing
 ```
 
-## Run
+## Run dc-DeepMSI model
 
-### Step 1 Preprocessing raw data
+If you want to perfrom dc-DeepMSI model with "SPAT-spec" mode, taking fetus mouse data as an example, run:
 
-Here, MSI data preprocessing including spectral alignment, peak detection, peak binning, peak filtering and peak pooling. Among them, spectral alignment, peak detection, peak binning are achieved using R package "MALDIquant", peak filtering and peak pooling are carried out by in-house Python scripts.
+```
+python run.py -input_file .../data/fetus_mouse.txt --input_shape 202 107 1237 --mode SPAT-spec --output_file output
+```
 
-### Step 2 Run dc-DeepMSI model
+If you want to perfrom dc-DeepMSI model with "spat-SPEC" mode, taking fetus mouse data as an example, run:
 
+```
+python run.py -input_file .../data/fetus_mouse.txt --input_shape 202 107 1237 --mode spat-SPEC --output_file output
+```
+
+# Contact
+
+Please contact me if you have any help: gankLei@stu.xmu.edu.cn
