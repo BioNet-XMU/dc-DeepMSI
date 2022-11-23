@@ -35,16 +35,16 @@ https://drive.google.com/drive/folders/1ksIHUE8r8ADS90pOErroW8_XEF-sOOdP?usp=sha
 
 ## Run dc-DeepMSI model
 
-If you want to perfrom dc-DeepMSI model with "SPAT-spec" mode, taking fetus mouse data as an example, run:
+If you want to perfrom dc-DeepMSI model with "spat-contig" mode, taking fetus mouse data as an example, run:
 
 ```
-python run.py -input_file .../data/fetus_mouse.txt --input_shape 202 107 1237 --mode SPAT-spec --output_file output
+python run.py -input_file .../data/fetus_mouse.txt --input_shape 202 107 1237 --mode spat-contig --output_file output
 ```
 
-If you want to perfrom dc-DeepMSI model with "spat-SPEC" mode, taking fetus mouse data as an example, run:
+If you want to perfrom dc-DeepMSI model with "spat-spor" mode, taking fetus mouse data as an example, run:
 
 ```
-python run.py -input_file .../data/fetus_mouse.txt --input_shape 202 107 1237 --mode spat-SPEC --output_file output
+python run.py -input_file .../data/fetus_mouse.txt --input_shape 202 107 1237 --mode pat-spor --output_file output
 ```
 
 # Contact
