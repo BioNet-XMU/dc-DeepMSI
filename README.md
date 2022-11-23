@@ -27,11 +27,7 @@ Architecture of dc-DeepMSI model. The upper half part is dimensionality reductio
 
 ## Input
 
- * The input is the preprocessed MSI data with two-dimensional shape [X*Y,P], where X and Y represent the pixel numbers of horizontal and vertical coordinates of MSI data, and P represents the number of ions. Taking msi data of fetuse mouse as an example, you can download it by following scripts：
- 
-```
-https://drive.google.com/drive/folders/1ksIHUE8r8ADS90pOErroW8_XEF-sOOdP?usp=sharing
-```
+ * The input is the preprocessed MSI data with two-dimensional shape [X*Y,P], where X and Y represent the pixel numbers of horizontal and vertical coordinates of MSI data, and P represents the number of ions. 
 
 ## Run dc-DeepMSI model
 
@@ -44,7 +40,7 @@ python run.py -input_file .../data/fetus_mouse.txt --input_shape 202 107 1237 --
 If you want to perfrom dc-DeepMSI model with "spat-spor" mode, taking fetus mouse data as an example, run:
 
 ```
-python run.py -input_file .../data/fetus_mouse.txt --input_shape 202 107 1237 --mode pat-spor --output_file output
+python run.py -input_file .../data/fetus_mouse.txt --input_shape 202 107 1237 --mode spat-spor --output_file output
 ```
 
 # Contact
