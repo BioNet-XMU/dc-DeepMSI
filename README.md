@@ -34,13 +34,13 @@ Architecture of dc-DeepMSI model. The upper half part is dimensionality reductio
 If you want to perfrom dc-DeepMSI model with "spat-contig" mode, taking fetus mouse data as an example, run:
 
 ```
-python run.py -input_file .../data/fetus_mouse.txt --input_shape 202 107 1237 --mode spat-contig --output_file output
+python run.py --input_file ./data/fetus_mouse_data.txt --input_shape 202 107 1237 --mode spat-contig --output_file output
 ```
 
 If you want to perfrom dc-DeepMSI model with "spat-spor" mode, taking fetus mouse data as an example, run:
 
 ```
-python run.py -input_file .../data/fetus_mouse.txt --input_shape 202 107 1237 --mode spat-spor --output_file output
+python run.py --input_file ./data/fetus_mouse_data.txt --input_shape 202 107 1237 --mode spat-spor --output_file output
 ```
 
 # Contact
