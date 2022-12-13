@@ -8,7 +8,7 @@ parser = get_arguments()
 parser.add_argument('--input_file',required= True,help = 'path to inputting msi data')
 parser.add_argument('--input_shape',type = int, nargs = '+', help='input file shape',)
 parser.add_argument('--mode',
-                    help = 'SPAT-spec mode for Spatially contiguous ROI, spat-SPEC for Spatially sporadic ROI',
+                    help = 'spat-contig mode for Spatially contiguous ROI, spat-spor for Spatially sporadic ROI',
                     default= 'SPAT-spec')
 parser.add_argument('--output_file', default='output',help='output file name')
 
