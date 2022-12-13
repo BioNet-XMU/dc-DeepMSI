@@ -90,8 +90,6 @@ class FCNetwork_SPAT_spec(nn.Module):
 
         x = x.permute(0, 3, 1, 2)
 
-        x = self.umsample(x)
-
         x = self.conv1(x)
         x = self.bn1(x)
         x_ = F.relu(x)
@@ -160,8 +158,6 @@ class FCNetwork_spat_SPEC(nn.Module):
         x = x_.view(-1, m, n, 3)
 
         x = x.permute(0, 3, 1, 2)
-
-        x = self.umsample(x)
 
         x = self.conv1(x)
         x = self.bn1(x)
