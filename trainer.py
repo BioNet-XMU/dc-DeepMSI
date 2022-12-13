@@ -100,8 +100,8 @@ def Feature_Clustering(image, args):
     model.load_state_dict(model_dict)
     model2.load_state_dict(model_dict2)
 
-    HPy_target = torch.zeros(image.shape[0] *2 - 1, image.shape[1] *2, args.nChannel)
-    HPz_target = torch.zeros(image.shape[0] *2, image.shape[1] *2 - 1, args.nChannel)
+    HPy_target = torch.zeros(image.shape[0] - 1, image.shape[1], args.nChannel)
+    HPz_target = torch.zeros(image.shape[0], image.shape[1] - 1, args.nChannel)
 
     if args.use_gpu == True:
         HPy_target = HPy_target.cuda()
@@ -158,13 +158,13 @@ def Feature_Clustering(image, args):
         print('ARI is : '+ str(ari))
 
         # initail tv loss
-        outputHP = output.reshape((image.shape[0]*2, image.shape[1]*2 ,  args.nChannel))
+        outputHP = output.reshape((image.shape[0], image.shape[1] ,  args.nChannel))
         HPy = outputHP[1:, :, :] - outputHP[0:-1, :, :]
         HPz = outputHP[:, 1:, :] - outputHP[:, 0:-1, :]
         lhpy = loss_hpy(HPy, HPy_target)
         lhpz = loss_hpz(HPz, HPz_target)
 
-        outputHP2 = output2.reshape((image.shape[0]*2 , image.shape[1] *2, args.nChannel))
+        outputHP2 = output2.reshape((image.shape[0] , image.shape[1] , args.nChannel))
         HPy2 = outputHP2[1:, :, :] - outputHP2[0:-1, :, :]
         HPz2 = outputHP2[:, 1:, :] - outputHP2[:, 0:-1, :]
         lhpy2 = loss_hpy(HPy2, HPy_target)
@@ -181,10 +181,10 @@ def Feature_Clustering(image, args):
         if batch_idx % 3 == 0:
 
             im_target2_rgb = np.array([label_colours[c % args.nChannel] for c in im_Averagetarget])
-            im_target2_rgb = im_target2_rgb.reshape(m *2, n *2, 3).astype(np.uint8)
+            im_target2_rgb = im_target2_rgb.reshape(m, n, 3).astype(np.uint8)
 
             im_target_rgb22 = np.array([label_colours[c % args.nChannel] for c in im_Average2target])
-            im_target_rgb22 = im_target_rgb22.reshape(m *2, n *2, 3).astype(np.uint8)
+            im_target_rgb22 = im_target_rgb22.reshape(m, n, 3).astype(np.uint8)
 
             cv2.imwrite(args.output_file + ".jpg", im_target2_rgb)
 
