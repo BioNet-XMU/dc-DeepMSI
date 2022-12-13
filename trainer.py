@@ -69,13 +69,13 @@ def Feature_Clustering(image, args):
         im = im.cuda()
 
     label_colours = np.random.randint(255, size=(args.nChannel, 3))
-    if args.mode == 'SPAT-spec':
+    if args.mode == 'spat-config':
         model = FCNetwork_SPAT_spec(k, args)
         model2 = FCNetwork_SPAT_spec(k, args)
         modelAverage = FCNetwork_SPAT_spec(k, args)
         model2Average = FCNetwork_SPAT_spec(k, args)
 
-    if args.mode == 'spat-SPEC':
+    if args.mode == 'spat-spor':
         model = FCNetwork_spat_SPEC(k, args)
         model2 = FCNetwork_spat_SPEC(k, args)
         modelAverage = FCNetwork_spat_SPEC(k, args)
