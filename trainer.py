@@ -188,7 +188,7 @@ def Feature_Clustering(image, args):
 
             cv2.imwrite(args.output_file + ".jpg", im_target2_rgb)
 
-        if args.mode == 'spat-SPEC':
+        if args.mode == 'spat-spor':
             args.stepsize_tv = 0
 
         loss1 = args.stepsize_tv * (lhpy + lhpz) + args.stepsize_sta * loss_soft(output, Average2target,batch_idx) \
