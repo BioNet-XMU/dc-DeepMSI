@@ -69,7 +69,7 @@ def Feature_Clustering(image, args):
         im = im.cuda()
 
     label_colours = np.random.randint(255, size=(args.nChannel, 3))
-    if args.mode == 'spat-config':
+    if args.mode == 'spat-contig':
         model = FCNetwork_SPAT_spec(k, args)
         model2 = FCNetwork_SPAT_spec(k, args)
         modelAverage = FCNetwork_SPAT_spec(k, args)
