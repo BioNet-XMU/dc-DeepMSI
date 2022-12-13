@@ -9,7 +9,7 @@ parser.add_argument('--input_file',required= True,help = 'path to inputting msi 
 parser.add_argument('--input_shape',type = int, nargs = '+', help='input file shape',)
 parser.add_argument('--mode',
                     help = 'spat-contig mode for Spatially contiguous ROI, spat-spor for Spatially sporadic ROI',
-                    default= 'SPAT-spec')
+                    default= 'spat-contig')
 parser.add_argument('--output_file', default='output',help='output file name')
 
 if __name__ == '__main__':
